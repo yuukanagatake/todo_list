@@ -27,8 +27,7 @@ public class DestroyServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+    /**     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = request.getParameter("_token");
@@ -37,7 +36,7 @@ public class DestroyServlet extends HttpServlet {
 
             // セッションスコープからメッセージのIDを取得して
             // 該当のIDのメッセージ1件のみをデータベースから取得
-            Todo m = em.find(Todo.class, (Integer)(request.getSession().getAttribute("task_id")));
+            Todo m = em.find(Todo.class, (Integer)(request.getSession().getAttribute("todo_id")));
 
             em.getTransaction().begin();
             em.remove(m);       // データ削除
@@ -45,7 +44,7 @@ public class DestroyServlet extends HttpServlet {
             em.close();
 
             // セッションスコープ上の不要になったデータを削除
-            request.getSession().removeAttribute("task_id");
+            request.getSession().removeAttribute("todo_id");
 
             // indexページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/index");
