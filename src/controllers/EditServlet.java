@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Task;
+import models.Todo;
 import utils.DBUtil;
 
 /**
@@ -35,7 +35,7 @@ public class EditServlet extends HttpServlet {
         EntityManager em = DBUtil.createEntityManager();
 
         // 該当のIDのタスク1件のみをデータベースから取得
-        Task m = em.find(Task.class, Integer.parseInt(request.getParameter("id")));
+        Todo m = em.find(Todo.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
 

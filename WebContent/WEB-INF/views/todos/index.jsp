@@ -8,20 +8,20 @@
             </div>
         </c:if>
 
-<h2>タスク一覧</h2>
+<h2>todo一覧</h2>
         <ul>
-            <c:forEach var="task" items="${task}">
+            <c:forEach var="todo" items="${todos}">
                 <li>
-                    <a href="${pageContext.request.contextPath}/show?id=${task.id}">
-                        <c:out value="${task.id}" />
+                    <a href="${pageContext.request.contextPath}/show?id=${todo.id}">
+                        <c:out value="${todo.id}" />
                     </a>
-                    ：<c:out value="${task.content}" />
+                    ：<c:out value="${todo.content}" />
                 </li>
             </c:forEach>
         </ul>
 
 
-        <p><a href="${pageContext.request.contextPath}/new">新規タスクの追加</a></p>
+        <p><a href="${pageContext.request.contextPath}/new">新規todoの追加</a></p>
 
     </c:param>
 </c:import>
