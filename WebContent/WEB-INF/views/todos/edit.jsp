@@ -3,8 +3,8 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${task != null}">
-        <h2>id : ${task.id} のタスク編集ページ</h2>
+            <c:when test="${todo != null}">
+        <h2>id : ${todo.id} のtodo編集ページ</h2>
 
         <form method="POST" action="${pageContext.request.contextPath}/update">
             <c:import url="_form.jsp" />

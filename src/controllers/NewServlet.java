@@ -34,7 +34,7 @@ public class NewServlet extends HttpServlet {
         request.setAttribute("_token", request.getSession().getId());
 
         // おまじないとしてのインスタンスを生成
-        request.setAttribute("todos", new Todo());
+        request.setAttribute("todo", new Todo());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/todos/new.jsp");
         rd.forward(request, response);

@@ -10,7 +10,7 @@
 
 <h2>todo一覧</h2>
         <ul>
-            <c:forEach var="todo" items="${todos}">
+            <c:forEach var="todo" items="${todo}">
                 <li>
                     <a href="${pageContext.request.contextPath}/show?id=${todo.id}">
                         <c:out value="${todo.id}" />
